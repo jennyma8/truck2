@@ -1,6 +1,4 @@
 import { Image, StyleSheet, Platform, View, FlatList, Text } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -11,22 +9,17 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
+          source={require('@/assets/images/truck.png')}
           style={styles.reactLogo}
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+        <ThemedText type="title">Trucker's Log Book</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Trucker's Log Book</ThemedText>
-        
-        <ThemedText type="subtitle">Hours of Service compliance </ThemedText>
         <ThemedText>
-One of the main reasons for maintaining a log book is to ensure compliance with HOS regulations. These regulations, enforced by the Federal Motor Carrier Safety Administration (FMCSA), determine the number of hours a driver can drive and the minimum amount of rest required.  
+Ensure compliance with HOS regulations enforced by the Federal Motor Carrier Safety Administration (FMCSA)
 
-By accurately recording their activities and breaks, drivers can prove their compliance with these important safety regulations, which helps prevent fatigue-related accidents and promotes road safety.  
 </ThemedText>
 
 <ThemedText type="subtitle">Documentation and accountability </ThemedText>
@@ -35,17 +28,10 @@ By accurately recording their activities and breaks, drivers can prove their com
 
 
  </ThemedText>
-<View>
-      <FlatList
-        data={[
-          {key: '- Audits.'},
-          {key: '- Accident investigations. '},
-          {key: '- Legal proceedings.'},
-         
-        ]}
-        renderItem={({item}) => <Text>{item.key}</Text>}
-      />
-    </View>
+ <ThemedText>- Audits.</ThemedText>
+ <ThemedText>- Accident investigations.</ThemedText>
+ <ThemedText>- Legal proceedings.</ThemedText>
+
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -62,10 +48,8 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+    height: 250,
+    width: 360,
+   
   },
 });
