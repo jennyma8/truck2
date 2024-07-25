@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, View, FlatList, Text } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -20,15 +20,32 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Profile</ThemedText>
+        <ThemedText type="subtitle">Trucker's Log Book</ThemedText>
+        
+        <ThemedText type="subtitle">Hours of Service compliance </ThemedText>
         <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
+One of the main reasons for maintaining a log book is to ensure compliance with HOS regulations. These regulations, enforced by the Federal Motor Carrier Safety Administration (FMCSA), determine the number of hours a driver can drive and the minimum amount of rest required.  
+
+By accurately recording their activities and breaks, drivers can prove their compliance with these important safety regulations, which helps prevent fatigue-related accidents and promotes road safety.  
+</ThemedText>
+
+<ThemedText type="subtitle">Documentation and accountability </ThemedText>
+<ThemedText>Log books act as a documented trail of a driver's activities, providing crucial information about their driving and working hours. This documentation can be essential in various scenarios, including:  
+
+
+
+ </ThemedText>
+<View>
+      <FlatList
+        data={[
+          {key: '- Audits.'},
+          {key: '- Accident investigations. '},
+          {key: '- Legal proceedings.'},
+         
+        ]}
+        renderItem={({item}) => <Text>{item.key}</Text>}
+      />
+    </View>
       </ThemedView>
     </ParallaxScrollView>
   );

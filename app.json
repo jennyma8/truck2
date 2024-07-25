@@ -4,7 +4,7 @@
     "slug": "truck2",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/semi_truck.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
@@ -27,11 +27,13 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      
       "expo-router",
-      "expo-image-picker",
+      ["expo-image-picker",
         {
           "photosPermission": "The app accesses your photos to let you share them with your friends."
         }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
