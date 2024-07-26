@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import { StyleSheet, Image, Platform, TextInput, Button, Alert, View} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Print from 'expo-print';
@@ -142,7 +141,7 @@ export default function TabTwoScreen() {
               bottom: 0;
               left: 0;
               width: 100%;
-              text-align: right;
+              text-align: left;
               padding: 10px;
               border-top: 1px solid #dddddd;
             }
@@ -210,7 +209,7 @@ export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
+      headerImage={<Image source={require('@/assets/images/truck2.png')} style={styles.headerImage} />}>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Forms</ThemedText>
       </ThemedView>
@@ -237,10 +236,10 @@ export default function TabTwoScreen() {
       </Collapsible>
       <Collapsible title="My Rate">
         <ThemedText>
-        Rate per mile = 0.63</ThemedText>
-        <ThemedText>Layover Rate = 85</ThemedText>
-        <ThemedText>Pickup/Drop Rate = 150</ThemedText>
-        <ThemedText>Waiting Time Rate = 20
+        Rate per mile: $0.63</ThemedText>
+        <ThemedText>Layover Rate: $85</ThemedText>
+        <ThemedText>Pickup/Drop Rate: $150</ThemedText>
+        <ThemedText>Waiting Time Rate: $20
         </ThemedText>
       </Collapsible>
       <Collapsible title="My Trip">
@@ -315,10 +314,10 @@ const styles = StyleSheet.create({
     height: 200,
   },
   headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+    height: 250,
+    width: 360,
+    
+    
   },
   input: {
     marginBottom: 10,
